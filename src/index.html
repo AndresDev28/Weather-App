@@ -6,8 +6,19 @@
   <title>Odin Weather App</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Odin Weather app</h1>
+  <h1>Weather App</h1>
+  <form action="" id="getWeather">
+    <div class="search-container">
+      <label for="location">Location:</label>
+      <input type="text" id="location" placeholder="...Alicante" required>
+    </div>
+    <button type="submit" id="searchBtn">Search</button>
+  </form>
+  <div id="content">
+    <h1 id="load" style="display: none;">Loading...</h1>
+    <h2 id="locationName" style="display: none;"></h2>
+    <div id="currentWeather" style="display: none;"></div>
+    <div id="forecastWeek" style="display: none;"></div>
   </div>
 </body>
 </html>

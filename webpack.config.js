@@ -4,13 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js', // Punto de entrada de la app
   output: {
-    filename: 'main.js', // Nombre del archivo de salida
+    filename: 'boundle.js', // Nombre del archivo de salida
     path: path.resolve(__dirname, 'dist'), // Directorio de salida
+    publicPath: '/', // Ruta pública para los assets
   },
   mode: 'development',
   devServer: {
     static: './dist', // Directorio desde donde se servirán los archivos
-    port: 8080, // Puerto donde se ejecutrá el navegador al iniciar el servidor
+    port: 8080, // Puerto donde se ejecutará el navegador al iniciar el servidor
     open: true,
     hot: true, // Habilita Hot Module Replacement
     watchFiles: ['./src/**/*.{js,css,html}'], // Observa los archivos especificados
@@ -31,18 +32,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            // type: "asset/resource",
-            options: {
-              // name: "[name].[contenthash].[ext]",
-              name: '[contenthash].[ext]',
-              outputPath: 'images/', // This is where the images will be copied
-            },
-          },
-        ],
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.(mp4|webm)$/i, // Aplica la regla a videos
@@ -55,6 +46,9 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
+        options: {
+          esModule: false, // Asegúrate de que esModule esté configurado en false
+        },
       },
     ],
   },
