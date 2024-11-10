@@ -2,15 +2,16 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.js', // Punto de entrada de la app
   output: {
-    filename: 'boundle.js', // Nombre del archivo de salida
+    filename: 'bundle.js', // Nombre del archivo de salida
     path: path.resolve(__dirname, 'dist'), // Directorio de salida
     publicPath: '/', // Ruta pública para los assets
   },
-  mode: 'development',
+  devtool: 'eval-source-map', // Source maps for easier debugging
   devServer: {
-    static: './dist', // Directorio desde donde se servirán los archivos
+    static: path.resolve(__dirname, './dist'), // Directorio desde donde se servirán los archivos
     port: 8080, // Puerto donde se ejecutará el navegador al iniciar el servidor
     open: true,
     hot: true, // Habilita Hot Module Replacement
@@ -20,6 +21,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html', // Ruta al archivo HTML plantilla en el src
       filename: 'index.html', // Nombre del archivo HTML generado
+      inject: 'body',
     }),
   ],
   module: {
