@@ -46,9 +46,6 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
-        options: {
-          esModule: false, // Asegúrate de que esModule esté configurado en false
-        },
       },
     ],
   },
