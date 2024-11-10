@@ -1,0 +1,326 @@
+@font-face {
+  font-family: 'Cookies';
+  src: url('/src/assets/fonts/Cookies-G3Beg.otf') format('opentype');
+  font-weight: normal;
+  font-size: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(315deg, #5cfc42 10%, #68ede1 90%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 10%;
+  gap: 5px;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+}
+
+.search-container input {
+  border: none;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-container button {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%)
+}
+.search-container button:hover{
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  width: 1200px;
+  height: 90%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  margin-bottom: 2rem;
+}
+
+.content-visible {
+  opacity: 1;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #FCFCFC;
+  padding: 1rem;
+  border-radius: 20px 0 0 20px;
+}
+
+
+.title-app,
+label{
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.second-row {
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#currentConditionsImg {
+  width: 100px;
+  height: 100px;
+  margin-left: 2rem;
+}
+
+#currentTemp {
+  font-size: 2rem;
+}
+
+.current-dayHour {
+  display: flex;
+  gap: 5px;
+}
+
+#currentDayTitle {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.current-hour {
+  color: #9a9a9a;
+  font-weight: bold;
+}
+
+hr {
+  border: 1px solid #D6D7DA;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.third-row {
+  flex: 0 0 35%;
+}
+
+.current-conditions {
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  gap: 1rem;
+}
+
+#currentConditionsIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.rain-conditions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+#rainConditionsIcon {
+  width: 20px;
+  height: 30px;
+}
+
+.template-location {
+  flex: 0 0 10%;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #F6F6F8;
+  padding: 2rem;
+  border-radius: 0 20px 20px 0;
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.today-week {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.controllers-btn {
+  display: flex;
+  gap: 2rem;
+  padding-right: 2rem;  
+}
+
+.control-btn {
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+}
+.control-btn:hover {
+  background-color: white;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Estilos para Today Display / Week Display */
+
+.selected-display {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Estilos para bottom section */
+
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.bottom-title {
+  margin-bottom: 1rem;
+}
+
+.bottom-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  background-color: #FCFCFC;
+  border-radius: 20px;
+  height: 100px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #000;
+  font-size: 0,8rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card img {
+  width: 40px;
+  height: 40px;
+}
+
+.sunrise-sunset {
+  display: flex;
+  flex-direction: column;
+}
+.sunrise-sunset img {
+  height: 30px;
+  width: 30px;
+}
+
+.sunrise, .sunset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* week forecast styles */
+
+.week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  gap: 1rem;
+}
+.day-li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0px;
+  gap: 5px;
+  list-style-type: none;
+  background-color: #FCFCFC;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.day-name {
+  margin: 0;
+}
+.week-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.temp-range {
+  display: flex;
+}
+
+.temp-min {
+  color: #9a9a9a;
+}
