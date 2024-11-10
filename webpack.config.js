@@ -8,13 +8,14 @@ module.exports = {
     filename: 'bundle.js', // Nombre del archivo de salida
     path: path.resolve(__dirname, 'dist'), // Directorio de salida
     publicPath: '/', // Ruta pública para los assets
+    clean: true, // Clean dist folder before build
   },
   devtool: 'eval-source-map', // Source maps for easier debugging
   devServer: {
     static: path.resolve(__dirname, './dist'), // Directorio desde donde se servirán los archivos
     port: 8080, // Puerto donde se ejecutará el navegador al iniciar el servidor
-    open: true,
-    hot: true, // Habilita Hot Module Replacement
+    // open: true,
+    // hot: true, // Habilita Hot Module Replacement
     watchFiles: ['./src/**/*.{js,css,html}'], // Observa los archivos especificados
   },
   plugins: [
@@ -36,10 +37,6 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
-      },
-      {
-        test: /\.(mp4|webm)$/i, // Aplica la regla a videos
-        type: 'asset/resource', // Maneja los videos como recursos
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
