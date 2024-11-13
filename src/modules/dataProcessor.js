@@ -14,11 +14,12 @@ export function processWeatherData(data) {
   const currentDateHour = new Date();
   const [currentHour, currentMinute, currentSecond] = currentConditions.datetime.split(':').map(Number);
   currentDateHour.setHours(currentHour, currentMinute, currentSecond);
-
-  return {
+  const temperature = currentConditions.temp;
+  const weatherData = {
     location: data.resolvedAddress,
+    address: data.address,
     description: data.description,
-    temperature: (currentConditions.temp),
+    temperature, // Devuelve la temperatura en unidades métricas
     dayDateTime: today.datetime,
     currentHour: currentDateHour, // Utiliza la fecha y hora combinada
     currentConditions: currentConditions.conditions,
@@ -35,6 +36,9 @@ export function processWeatherData(data) {
     rainProb: today.precipprob,
     pressure: today.pressure,
   };
+
+  console.log('Prevision: ', weatherData);
+  return weatherData;
 }
 
 export function processWeeklyData(data) {
@@ -42,9 +46,9 @@ export function processWeeklyData(data) {
     throw new Error('Invalid wheather data recieved to process week data');
   }
 
-  const { days } = data; // console.log
+  console.log('data de la semana:', data);
 
-  return days.slice(1, 7).map((day) => ({
+  return data.days.slice(1, 7).map((day) => ({
     dayName: new Date(day.datetime).toLocaleDateString('en-EN', { weekday: 'long' }),
     icon: getWeatherImg(day.icon),
     tempMax: day.tempmax,

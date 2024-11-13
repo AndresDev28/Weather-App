@@ -5,6 +5,8 @@ export function renderDayForecast(data) {
   /** Render left-side section */
   try {
     const weatherIcon = getWeatherImg(data.icon);
+    document.getElementById('address').textContent = data.address;
+
     document.getElementById('currentConditionsImg').src = weatherIcon;
 
     document.getElementById('currentTemp').textContent = `${data.temperature}°`;
@@ -36,7 +38,7 @@ export function renderDayForecast(data) {
   }
 }
 
-export function renderWeekForecast(data) {
+export function renderWeekForecast(weeklyDays) {
   try {
     const weekDisplay = document.querySelector('.week-display');
     weekDisplay.innerHTML = '';
@@ -45,7 +47,7 @@ export function renderWeekForecast(data) {
     const weekForecast = document.createElement('ul');
     weekForecast.classList.add('week-days');
 
-    data.forEach((day) => {
+    weeklyDays.forEach((day) => {
       const dayForecast = document.createElement('li');
       dayForecast.classList.add('day-li');
       dayForecast.innerHTML = `

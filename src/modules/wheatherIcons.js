@@ -1,12 +1,12 @@
-import clearDay from '../assets/icons/clear-day.svg';
-import clearNight from '../assets/icons/clear-night.svg';
-import partlyCloudyDay from '../assets/icons/partly-cloud-day.svg';
-import partlyCloudyNight from '../assets/icons/partly-cloud-night.svg';
-import cloudy from '../assets/icons/cloudy.svg';
-import rain from '../assets/icons/cloud-rain.svg';
-import snow from '../assets/icons/snow.svg';
-import wind from '../assets/icons/wind.svg';
-import fog from '../assets/icons/fog.svg';
+import clearDay from '../assets/images/clear-day.png';
+import clearNight from '../assets/images/clear-night.png';
+import partlyCloudyDay from '../assets/images/partly-cloud-day.png';
+import partlyCloudyNight from '../assets/images/partly-cloud-night.png';
+import cloudy from '../assets/images/cloudy.png';
+import rain from '../assets/images/cloud-rain.png';
+import snow from '../assets/images/snow.png';
+import wind from '../assets/images/wind.png';
+import fog from '../assets/images/fog.png';
 
 // eslint-disable-next-line import/prefer-default-export
 export function getWeatherImg(iconData) {

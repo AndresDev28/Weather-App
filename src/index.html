@@ -19,7 +19,8 @@
   <div class="content">
     <div class="left-side" id="leftSide">
       <div class="first-row">
-        <h2 id="location">Weather in: </h2>
+        <h2 class="intro-weather">Weather in: </h2>
+        <h3 class="address" id="address"></h3>
       </div>
       <div class="second-row">
         <div class="current-weather-image">
@@ -29,19 +30,19 @@
           12°C
         </div>
         <div class="current-dayHour">
-          <div class="current-day-title" id="currentDayTitle">Monday,</div>
-          <div class="current-hour" id="currentHour">16:00</div>
+          <div class="current-day-title" id="currentDayTitle"></div>
+          <div class="current-hour" id="currentHour"></div>
         </div>
       </div>
       <hr>
       <div class="third-row">
         <div class="current-conditions">
           <img src="#" alt="Current Conditions" id="currentConditionsIcon">
-          <p id="currentConditionsText">Partially cloudy</p>
+          <p id="currentConditionsText"></p>
         </div>
         <div class="rain-conditions">
           <img src="./assets/icons/umbrella.svg" alt="Rain conditions" id="rainConditionsIcon">
-          <p id="rainConditionsText">Rain - 30%</p>
+          <p id="rainConditionsText"></p>
         </div>
       </div>
       <div class="template-location">
@@ -81,7 +82,7 @@
           <div class="card">
             <p class="card-title">Wind Status</p>
             <div class="card-content">
-              <img src="./assets/icons/wind.svg" alt="Wind Status" id="windStatusImg">
+              <img src="./assets/images/wind.png" alt="Wind Status" id="windStatusImg">
             <span id="windStatusValue">7.70</span>
             </div> 
           </div>
